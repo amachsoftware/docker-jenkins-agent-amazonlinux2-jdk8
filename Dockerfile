@@ -9,4 +9,6 @@ RUN yum clean all
 
 USER ${user}
 
-ENTRYPOINT ["JAVA_BIN=/usr/lib/jvm/java-11/bin/java", "jenkins-agent"]
+ENV JAVA_BIN=/usr/lib/jvm/java-11/bin/java
+
+ENTRYPOINT ["jenkins-agent"]
