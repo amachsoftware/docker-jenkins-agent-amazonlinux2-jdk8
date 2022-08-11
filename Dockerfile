@@ -7,6 +7,10 @@ USER root
 RUN amazon-linux-extras install -y corretto8
 RUN yum clean all
 
+# Have the Jenkins Agent startup script use JAVA_BIN env var for location of java.
+# Cannot use JAVA_HOME as that would impact programs using Java run by the agent.
+RUN sed -i 's/"java"/"$JAVA_BIN"/' /usr/local/bin/jenkins-agent
+
 USER ${user}
 
 ENV JAVA_BIN=/usr/lib/jvm/java-11/bin/java
