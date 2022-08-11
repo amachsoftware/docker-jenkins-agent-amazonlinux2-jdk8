@@ -5,6 +5,7 @@ ARG user=jenkins
 USER root
 
 RUN amazon-linux-extras install -y corretto8
+RUN yum install -y java-1.8.0-amazon-corretto-devel
 RUN yum clean all
 
 # Have the Jenkins Agent startup script use JAVA_BIN env var for location of java.
