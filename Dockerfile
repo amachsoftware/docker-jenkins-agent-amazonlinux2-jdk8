@@ -14,6 +14,6 @@ RUN sed -i 's/"java"/"$JAVA_BIN"/' /usr/local/bin/jenkins-agent
 
 USER ${user}
 
-ENV JAVA_BIN=/usr/lib/jvm/java-11/bin/java
+ENV JAVA_BIN=/usr/lib/jvm/java-11-openjdk/bin/java
 
 ENTRYPOINT ["jenkins-agent"]
