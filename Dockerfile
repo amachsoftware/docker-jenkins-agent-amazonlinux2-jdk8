@@ -14,7 +14,7 @@ RUN sed -i 's/JAVA_HOME/JENKINS_AGENT_JAVA_HOME/' /usr/local/bin/jenkins-agent
 
 # NPM install
 RUN mkdir -p /usr/local/nvm
-ENV NVM_DIR="/usr/local/nvm" NODE_VERSION="v14.0.0"
+ENV NVM_DIR="/usr/local/nvm" NODE_VERSION="v14.16.1"
 RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash 
 RUN /bin/bash -c "source $NVM_DIR/nvm.sh && nvm install $NODE_VERSION && nvm use --delete-prefix $NODE_VERSION"
 ENV NODE_PATH $NVM_DIR/versions/node/$NODE_VERSION/bin
